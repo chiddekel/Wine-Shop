@@ -2,6 +2,109 @@
 The wine shop - uwp/APPX/winrt
 
 
+wine-runtime-extension/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── docs/
+│   ├── architecture.md
+│   ├── appx-runtime.md
+│   ├── winrt-activation.md
+│   ├── appcontainer-shim.md
+│   ├── offline-deployment.md
+│   └── wineshop-runtime.md
+│
+├── tools/
+│   ├── wine-appx-list/
+│   │   ├── main.c
+│   │   └── Makefile
+│   ├── wine-winrt-scan/
+│   │   ├── main.c
+│   │   └── Makefile
+│   └── deployment-diagnostics/
+│       ├── formatter.py
+│       └── README.md
+│
+├── dlls/
+│   ├── appx/
+│   │   ├── appx_main.c
+│   │   ├── manifest_parser.c
+│   │   ├── blockmap_parser.c
+│   │   ├── installer.c
+│   │   ├── registry.c
+│   │   ├── appx.spec
+│   │   └── Makefile.in
+│   │
+│   ├── winrtbase/
+│   │   ├── runtimeclass_registry.c
+│   │   ├── activation.c
+│   │   ├── inspectable.c
+│   │   ├── metadata_loader.c
+│   │   ├── winrtbase.spec
+│   │   └── Makefile.in
+│   │
+│   ├── appmodel/
+│   │   ├── appcontainer_token.c
+│   │   ├── capabilities.c
+│   │   ├── environment.c
+│   │   ├── filesystem_mapping.c
+│   │   ├── appmodel.spec
+│   │   └── Makefile.in
+│   │
+│   └── deploy/
+│       ├── orchestrator.c
+│       ├── powershell_redirect.c
+│       ├── registry_shims.c
+│       ├── paths.c
+│       ├── deploy.spec
+│       └── Makefile.in
+│
+├── include/
+│   ├── winrt/
+│   │   ├── inspectable.h
+│   │   ├── winmd_loader.h
+│   │   ├── activation.h
+│   │   └── runtimeclass_registry.h
+│   │
+│   └── appx/
+│       ├── appx_manifest.h
+│       ├── appx_blockmap.h
+│       ├── appx_installer.h
+│       ├── appx_defs.h
+│       └── appx_errors.h
+│
+├── runtime-store/
+│   ├── manifests/
+│   │   └── example-runtime.json
+│   ├── packages/
+│   │   └── placeholder.txt
+│   └── index.db   (future: sqlite or json index)
+│
+├── scripts/
+│   ├── install-runtime.sh
+│   ├── verify-runtime.sh
+│   ├── debug-winrt.sh
+│   ├── debug-appx.sh
+│   └── prefix-clean.sh
+│
+└── tests/
+    ├── appx/
+    │   ├── test_manifest.c
+    │   ├── test_blockmap.c
+    │   └── test_install.c
+    ├── winrt/
+    │   ├── test_activation.c
+    │   ├── test_metadata_loader.c
+    │   └── test_inspectable.c
+    ├── appmodel/
+    │   ├── test_token.c
+    │   └── test_directories.c
+    └── deploy/
+        ├── test_powershell_redirect.c
+        └── test_registry_shims.c
+
 # Wine Runtime Extension — AppX / WinRT / Offline Runtime Support
 
 This repository tracks technical work required to extend Wine with the ability to
